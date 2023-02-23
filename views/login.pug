@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Login
+    body 
+        div(style="min-width:30vw;")
+            if error 
+                div(style="background-color:#D98880; max-width:300px; padding:1px; margin:10px")
+                    p= error
+            form(action="/login", method="post" style="display:flex; flex-direction:column;")
+                div(style="display: flex; flex-direction:column; max-width:300px; margin:10px") 
+                    label(for="email") Email 
+                    input(type="email", name="email" id="email" required)
+                div(style="display: flex; flex-direction:column; max-width:300px; margin:10px") 
+                    label(for="password") Contraseña 
+                    input(type="password", name="password" id="password" required) 
+                div(style="display:flex; justify-content:space-between; max-width:300px; margin:10px") 
+                    <a href="/register">Registrarse</a>
+                    button(type="submit") Ingresar

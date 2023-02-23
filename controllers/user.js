@@ -13,8 +13,8 @@ const getAll = async (req, res) => {
 const create = async (req, res) => {
   const { name, email, password } = req.body
   try {
-    const data = UserService.create({ name, email, password })
-    data && res.redirect('/')
+    const data = await UserService.create({ name, email, password })
+    data && res.redirect('/login')
   } catch (error) {
     res.status(500).json(error?.message).end()
   }
